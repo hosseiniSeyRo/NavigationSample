@@ -1,0 +1,91 @@
+package com.rhosseini.movieinfo.view.activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.rhosseini.movieinfo.R;
+import com.rhosseini.movieinfo.model.database.entity.SearchHistory;
+import com.rhosseini.movieinfo.view.adapter.MovieRecyclerViewAdapter;
+import com.rhosseini.movieinfo.viewModel.MovieViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    RecyclerView recyclerView;
+    MovieRecyclerViewAdapter adapter;
+    MovieViewModel viewModel;
+    AutoCompleteTextView searchView;
+    ImageView searchIcon, searchClearIcon;
+    ArrayAdapter<String> searchSuggestionAdapter;
+    View emptyLayout, loadingLayout;
+    final List<String> suggestions = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        /* init viewModel */
+        viewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
+
+        /* bind views*/
+        bindViews();
+
+        /* Clicks handler */
+        clickHandler();
+
+        /* configure Search */
+        configureSearch();
+
+        /* configure RecyclerView */
+        configureRecyclerView();
+
+//        /* get All Movies */
+//        getMoviesByTitle("tehran", 1);
+    }
+
+    /* bind views*/
+    private void bindViews() {
+        searchView = findViewById(R.id.searchView);
+        searchIcon = findViewById(R.id.searchIcon);
+        searchClearIcon = findViewById(R.id.searchClearIcon);
+        recyclerView = findViewById(R.id.recyclerView);
+        emptyLayout = findViewById(R.id.emptyLayout);
+        loadingLayout = findViewById(R.id.loadingLayout);
+
+        // hide searchClearIcon
+        searchClearIcon.setVisibility(View.GONE);
+
+        // show emptyLayout and hide loadingLayout and recyclerView
+        emptyLayout.setVisibility(View.VISIBLE);
+        loadingLayout.setVisibility(View.GONE);
+        recyclerView.setVisibility(View.GONE);
+    }
+
+    /* Click handler */
+    private void clickHandler() {
+        searchClearIcon.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.searchC
