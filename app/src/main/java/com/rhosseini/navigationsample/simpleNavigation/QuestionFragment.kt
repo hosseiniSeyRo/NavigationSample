@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 import com.rhosseini.navigationsample.R
 
@@ -24,10 +24,11 @@ class QuestionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val navController = Navigation.findNavController(view)
+//        val navController = Navigation.findNavController(view)
+        val navController = findNavController()
 
         val gameOverListener: (View) -> Unit = {
-            navController.navigate(R.id.actionGameOver)
+            navController.navigate(QuestionFragmentDirections.actionGameOver())
         }
 
         view.findViewById<View>(R.id.rb1).setOnClickListener(gameOverListener)
@@ -36,8 +37,9 @@ class QuestionFragment : Fragment() {
 
         val rb3 = view.findViewById<RadioButton>(R.id.rb3)
         rb3.setOnClickListener {
-            val bundle = Bundle().also { it.putString("answer", rb3.text.toString()) }
-            navController.navigate(R.id.actionWinn, bundle)
+//            val bundle = Bundle().also { it.putString("answer", rb3.text.toString()) }
+//            navController.navigate(R.id.actionWinn, bundle)
+            navController.navigate(QuestionFragmentDirections.actionWinn().setAnswer(rb3.text.toString()))
         }
     }
 

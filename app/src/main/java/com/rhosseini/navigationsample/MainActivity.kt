@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.rhosseini.navigationsample.databinding.ActivityMainBinding
+import com.rhosseini.navigationsample.simpleNavigation.SimpleNavigationActivity
 
 class MainActivity : AppCompatActivity() {
 
