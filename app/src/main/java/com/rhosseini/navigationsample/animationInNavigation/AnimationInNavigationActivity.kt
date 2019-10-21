@@ -1,7 +1,8 @@
-package com.rhosseini.navigationsample
+package com.rhosseini.navigationsample.animationInNavigation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rhosseini.navigationsample.R
 
 class AnimationInNavigationActivity : AppCompatActivity() {
 

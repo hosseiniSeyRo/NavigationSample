@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SharedAnimationActivity" />
-        <activity android:name=".AnimationInNavigationActivity" />
-        <activity android:name=".MultiNavHostActivity" />
+        <activity android:name=".sharedAnimation.SharedAnimationActivity" />
+        <activity android:name=".animationInNavigation.AnimationInNavigationActivity" />
+        <activity android:name=".multiNavHost.MultiNavHostActivity" />
         <activity android:name=".simpleNavigation.SimpleNavigationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

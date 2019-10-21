@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import com.rhosseini.navigationsample.animationInNavigation.AnimationInNavigationActivity
 import com.rhosseini.navigationsample.databinding.ActivityMainBinding
+import com.rhosseini.navigationsample.multiNavHost.MultiNavHostActivity
+import com.rhosseini.navigationsample.sharedAnimation.SharedAnimationActivity
 import com.rhosseini.navigationsample.simpleNavigation.SimpleNavigationActivity
 
 class MainActivity : AppCompatActivity() {
