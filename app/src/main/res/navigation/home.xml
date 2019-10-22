@@ -18,5 +18,13 @@
         <action
             android:id="@+id/action_welcome_to_about"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_welcome_to_setting"
+            app:destination="@id/settingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.rhosseini.navigationsample.multiNavHost.homeScreen.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>

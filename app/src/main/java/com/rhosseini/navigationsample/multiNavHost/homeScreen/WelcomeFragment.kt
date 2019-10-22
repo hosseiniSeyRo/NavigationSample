@@ -18,8 +18,12 @@ class WelcomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_welcome, container, false)
 
+        view.findViewById<View>(R.id.share).setOnClickListener {
+            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeToSetting())
+        }
+
         view.findViewById<Button>(R.id.about_btn).setOnClickListener {
-            findNavController().navigate(R.id.action_welcome_to_about)
+            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeToAbout())
         }
         return view
     }
