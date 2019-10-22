@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list"
+    app:startDestination="@id/list1">
+
+    <fragment
+        android:id="@+id/list1"
+        android:name="com.rhosseini.navigationsample.multiNavHost.listScreen.List1"
+        android:label="fragment_list1"
+        tools:layout="@layout/fragment_list1">
+        <action
+            android:id="@+id/action_list1_to_list2"
+            app:destination="@id/list2" />
+    </fragment>
+    <fragment
+        android:id="@+id/list2"
+        android:name="com.rhosseini.navigationsample.multiNavHost.listScreen.List2"
+        android:label="fragment_list2"
+        tools:layout="@layout/fragment_list2">
+        <action
+            android:id="@+id/action_list2_to_list3"
+            app:destination="@id/list3" />
+    </fragment>
+    <fragment
+        android:id="@+id/list3"
+        android:name="com.rhosseini.navigationsample.multiNavHost.listScreen.List3"
+        android:label="fragment_list3"
+        tools:layout="@layout/fragment_list3" />
+</navigation>
