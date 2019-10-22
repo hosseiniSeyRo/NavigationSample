@@ -2,21 +2,29 @@ package com.rhosseini.navigationsample.multiNavHost
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
+import androidx.lifecycle.LiveData
+import androidx.navigation.NavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.rhosseini.navigationsample.R
 
 class MultiNavHostActivity : AppCompatActivity() {
 
-    lateinit var controller: Unit
+    private var currentNavController: LiveData<NavController>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_multi_nav_host)
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
-        }
+        } // Else, need to wait for onRestoreInstanceState
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        // Now that BottomNavigationBar has restored its instance state
+        // and its selectedItemId, we can proceed with setting up the
+        // BottomNavigationBar with Navigation
+        setupBottomNavigationBar()
     }
 
     /**
@@ -25,8 +33,20 @@ class MultiNavHostActivity : AppCompatActivity() {
     private fun setupBottomNavigationBar() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
 
+        val navGraphIds = listOf(R.navigation.home, R.navigation.list, R.navigation.form)
+
         // Setup the bottom navigation view with a list of navigation graphs
-        controller = NavigationUI.setupWithNavController(bottomNavigationView,
-            Navigation.findNavController(this, R.id.nav_host_container))
+        val controller = bottomNavigationView.setupWithNavController(
+            navGraphIds = navGraphIds,
+            fragmentManager = supportFragmentManager,
+            containerId = R.id.nav_host_container,
+            intent = intent
+        )
+
+        currentNavController = controller
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return currentNavController?.value?.navigateUp() ?: false
     }
 }
