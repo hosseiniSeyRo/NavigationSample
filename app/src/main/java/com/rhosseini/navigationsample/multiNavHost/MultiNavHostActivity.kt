@@ -3,7 +3,9 @@ package com.rhosseini.navigationsample.multiNavHost
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.rhosseini.navigationsample.R
 
@@ -14,6 +16,10 @@ class MultiNavHostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_multi_nav_host)
+
+        // set toolbar
+        setSupportActionBar(findViewById(R.id.toolbar))
+
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
         } // Else, need to wait for onRestoreInstanceState
@@ -43,6 +49,10 @@ class MultiNavHostActivity : AppCompatActivity() {
             intent = intent
         )
 
+        // Whenever the selected controller changes, setup the action bar.
+        controller.observe(this, Observer { navController ->
+            setupActionBarWithNavController(navController)
+        })
         currentNavController = controller
     }
 
