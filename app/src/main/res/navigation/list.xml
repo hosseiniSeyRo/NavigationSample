@@ -28,4 +28,13 @@
         android:name="com.rhosseini.navigationsample.multiNavHost.listScreen.List3"
         android:label="fragment_list3"
         tools:layout="@layout/fragment_list3" />
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.rhosseini.navigationsample.multiNavHost.listScreen.SettingFragment"
+        android:label="SettingFragment" />
+
+    <action
+        android:id="@+id/action_global_settingFragment"
+        app:destination="@id/settingFragment" />
 </navigation>

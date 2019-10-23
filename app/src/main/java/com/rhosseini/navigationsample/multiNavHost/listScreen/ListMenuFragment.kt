@@ -34,7 +34,7 @@ open class ListMenuFragment : Fragment() {
                 return true
             }
             R.id.action_settings -> {
-                Toast.makeText(activity, "settings", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_global_settingFragment)
                 return true
             }
         }
