@@ -12,7 +12,7 @@ import com.rhosseini.navigationsample.R
 /**
  * A simple [Fragment] subclass.
  */
-class List3 : Fragment() {
+class List3 : ListMenuFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

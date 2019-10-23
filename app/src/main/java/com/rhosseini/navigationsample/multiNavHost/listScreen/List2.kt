@@ -14,7 +14,7 @@ import com.rhosseini.navigationsample.R
 /**
  * A simple [Fragment] subclass.
  */
-class List2 : Fragment() {
+class List2 : ListMenuFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
