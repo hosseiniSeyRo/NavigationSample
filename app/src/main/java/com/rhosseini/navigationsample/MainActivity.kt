@@ -10,6 +10,7 @@ import com.rhosseini.navigationsample.databinding.ActivityMainBinding
 import com.rhosseini.navigationsample.multiNavHost.MultiNavHostActivity
 import com.rhosseini.navigationsample.sharedAnimation.SharedAnimationActivity
 import com.rhosseini.navigationsample.simpleNavigation.SimpleNavigationActivity
+import com.rhosseini.navigationsample.splashScreen.SplashScreenActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,22 +28,16 @@ class MainActivity : AppCompatActivity() {
         when (view) {
             binding.btnSimpleNavigation -> startActivity(
                 Intent(
-                    this,
-                    SimpleNavigationActivity::class.java
+                    this, SimpleNavigationActivity::class.java
                 )
             )
             binding.btnMultiNavHost -> startActivity(Intent(this, MultiNavHostActivity::class.java))
+            binding.btnSplashScreen -> startActivity(Intent(this, SplashScreenActivity::class.java))
             binding.btnAnimationInNavigation -> startActivity(
-                Intent(
-                    this,
-                    AnimationInNavigationActivity::class.java
-                )
+                Intent(this, AnimationInNavigationActivity::class.java)
             )
             binding.btnSharedAnimation -> startActivity(
-                Intent(
-                    this,
-                    SharedAnimationActivity::class.java
-                )
+                Intent(this, SharedAnimationActivity::class.java)
             )
         }
 

@@ -32,6 +32,13 @@
             android:text="Multi NavHost" />
 
         <Button
+            android:id="@+id/btnSplashScreen"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler::btnClickHandler}"
+            android:text="splash screen Navigation" />
+
+        <Button
             android:id="@+id/btnAnimationInNavigation"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
