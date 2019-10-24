@@ -27,10 +27,16 @@ class SplashScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Handler().postDelayed({
-            findNavController().navigate(R.id.action_splashScreen_to_home, null,
-                NavOptions.Builder()
-                    .setPopUpTo(R.id.splashScreenFragment,
-                        true).build())
-        },4000)
+            findNavController().navigate(
+                R.id.action_splashScreen_to_home
+//                ,
+//                null,
+//                NavOptions.Builder()
+//                    .setPopUpTo(
+//                        R.id.splashScreenFragment,
+//                        true
+//                    ).build()
+            )
+        }, 4000)
     }
 }
