@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shared_animation_graph"
+    app:startDestination="@id/parentFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.rhosseini.navigationsample.sharedAnimation.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/parentFragment"
+        android:name="com.rhosseini.navigationsample.sharedAnimation.ParentFragment"
+        android:label="fragment_parent"
+        tools:layout="@layout/fragment_parent" >
+        <action
+            android:id="@+id/action_parent_to_detail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
