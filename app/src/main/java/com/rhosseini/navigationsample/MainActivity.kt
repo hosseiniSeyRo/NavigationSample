@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.rhosseini.navigationsample.animationInNavigation.AnimationInNavigationActivity
+import com.rhosseini.navigationsample.dialogWithNavigateBackWithResult.DialogActivity
 import com.rhosseini.navigationsample.databinding.ActivityMainBinding
 import com.rhosseini.navigationsample.multiNavHost.MultiNavHostActivity
 import com.rhosseini.navigationsample.sharedAnimation.SharedAnimationActivity
@@ -38,6 +39,9 @@ class MainActivity : AppCompatActivity() {
             )
             binding.btnSharedAnimation -> startActivity(
                 Intent(this, SharedAnimationActivity::class.java)
+            )
+            binding.btnDialogWithResult -> startActivity(
+                Intent(this, DialogActivity::class.java)
             )
         }
 

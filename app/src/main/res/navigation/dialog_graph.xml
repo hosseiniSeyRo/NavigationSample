@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.rhosseini.navigationsample.dialogWithNavigateBackWithResult.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <dialog_fragment
+        android:id="@+id/simpleDialog"
+        android:name="com.rhosseini.navigationsample.dialogWithNavigateBackWithResult.SimpleDialog"
+        android:label="SimpleDialog">
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"/>
+        <argument
+            android:name="message"
+            app:argType="string"
+            app:nullable="true"/>
+        <argument
+            android:name="positiveBtnText"
+            app:argType="string"
+            app:nullable="true"/>
+        <argument
+            android:name="negativeBtnText"
+            app:argType="string"
+            app:nullable="true"/>
+        <argument
+            android:name="requestCode"
+            app:argType="integer" />
+    </dialog_fragment>
+    <action
+        android:id="@+id/action_global_simpleDialog"
+        app:destination="@id/simpleDialog" />
+</navigation>
