@@ -32,23 +32,51 @@ class DialogWithCallbackFragment : Fragment() {
 
         val myListener = object : CostumeDialog.MyOnBtnClickListener {
             override fun onPositiveButtonClick() {
-                Toast.makeText(activity, "yes", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "positive", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNegativeButtonClick() {
-                Toast.makeText(activity, "no", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "negative", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNeutralButtonClick() {
-                Toast.makeText(activity, "cancel", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "neutral", Toast.LENGTH_SHORT).show()
             }
         }
 
-        view?.findViewById<Button>(R.id.btnShowDialog)?.setOnClickListener { view ->
+        view?.findViewById<Button>(R.id.btnShowDialogWithOneBtn)?.setOnClickListener { view ->
             val action = CostumeDialogDirections.actionGlobalCostumeDialog(
-                R.drawable.ic_home,
-                "my title",
-                "my message",
+                R.drawable.ic_1,
+                "my title 1",
+                "my message 1",
+                "ok",
+                null,
+                null,
+                myListener
+            )
+
+            view.findNavController().navigate(action)
+        }
+
+        view?.findViewById<Button>(R.id.btnShowDialogWithTwoBtn)?.setOnClickListener { view ->
+            val action = CostumeDialogDirections.actionGlobalCostumeDialog(
+                R.drawable.ic_2,
+                "my title 2",
+                "my message 2",
+                "ok",
+                "no",
+                null,
+                myListener
+            )
+
+            view.findNavController().navigate(action)
+        }
+
+        view?.findViewById<Button>(R.id.btnShowDialogWithThreeBtn)?.setOnClickListener { view ->
+            val action = CostumeDialogDirections.actionGlobalCostumeDialog(
+                R.drawable.ic_3,
+                "my title 3",
+                "my message 3",
                 "ok",
                 "no",
                 "cancel",

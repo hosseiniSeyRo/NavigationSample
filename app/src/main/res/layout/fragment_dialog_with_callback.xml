@@ -4,12 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".dialogWithCallback.DialogWithCallbackFragment">
 
     <Button
-        android:id="@+id/btnShowDialog"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnShowDialogWithOneBtn"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:text="show dialog" />
+        android:text="show dialog with one btn" />
+
+    <Button
+        android:id="@+id/btnShowDialogWithTwoBtn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="show dialog with two btn" />
+
+    <Button
+        android:id="@+id/btnShowDialogWithThreeBtn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="show dialog with three btn" />
 
 </LinearLayout>
