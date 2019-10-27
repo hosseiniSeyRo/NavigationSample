@@ -9,5 +9,25 @@
         android:id="@+id/bottomSheetFragment"
         android:name="com.rhosseini.navigationsample.bottomSheet.BottomSheetFragment"
         android:label="fragment_bottom_sheet"
-        tools:layout="@layout/fragment_bottom_sheet" />
+        tools:layout="@layout/fragment_bottom_sheet" >
+        <action
+            android:id="@+id/action_bottomSheetFragment_to_myBottomSheet3"
+            app:destination="@id/myBottomSheet3" />
+    </fragment>
+    <dialog
+        android:id="@+id/myBottomSheet3"
+        android:name="com.rhosseini.navigationsample.bottomSheet.MyBottomSheet"
+        android:label="my_bottom_sheet"
+        tools:layout="@layout/my_bottom_sheet" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="bottomSheetListener"
+            app:argType="com.rhosseini.navigationsample.bottomSheet.MyBottomSheet$MyBottomSheetListener"
+            app:nullable="true" />
+    </dialog>
 </navigation>

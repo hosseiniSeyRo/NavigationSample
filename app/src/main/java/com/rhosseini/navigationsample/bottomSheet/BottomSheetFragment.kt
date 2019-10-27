@@ -34,10 +34,13 @@ class BottomSheetFragment : Fragment() {
             }
         }
 
-        view?.findViewById<Button>(R.id.btnShowBottomSheet)?.setOnClickListener{
-            val myBottomSheet = MyBottomSheet()
-            myBottomSheet.listener = myBottomSheetListener
-            myBottomSheet.show(childFragmentManager, "bottomSheetTag")
+        view?.findViewById<Button>(R.id.btnShowBottomSheet)?.setOnClickListener {
+            val action = BottomSheetFragmentDirections.actionBottomSheetFragmentToMyBottomSheet3(
+                "my title",
+                "my description",
+                myBottomSheetListener
+            )
+            findNavController().navigate(action)
         }
     }
 }
