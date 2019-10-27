@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_with_callback_graph"
+    app:startDestination="@id/dialogWithCallbackFragment">
+
+    <fragment
+        android:id="@+id/dialogWithCallbackFragment"
+        android:name="com.rhosseini.navigationsample.dialogWithCallback.DialogWithCallbackFragment"
+        android:label="fragment_dialog_with_callback"
+        tools:layout="@layout/fragment_dialog_with_callback" />
+    <dialog
+        android:id="@+id/costumeDialog"
+        android:name="com.rhosseini.navigationsample.dialogWithCallback.CostumeDialog"
+        android:label="CostumeDialog">
+        <argument
+            android:name="icon"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="message"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="positiveBtnText"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="negativeBtnText"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="neutralBtnText"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="listener"
+            app:argType="com.rhosseini.navigationsample.dialogWithCallback.CostumeDialog$MyOnBtnClickListener"
+            app:nullable="true" />
+    </dialog>
+    <action
+        android:id="@+id/actionGlobalCostumeDialog"
+        app:destination="@id/costumeDialog" />
+</navigation>

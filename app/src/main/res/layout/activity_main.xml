@@ -59,6 +59,13 @@
             android:onClick="@{handler::btnClickHandler}"
             android:text="Dialog (with navigate back with result)" />
 
+        <Button
+            android:id="@+id/btnDialogWithCallback"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler::btnClickHandler}"
+            android:text="Dialog with Callback" />
+
     </LinearLayout>
 
 </layout>

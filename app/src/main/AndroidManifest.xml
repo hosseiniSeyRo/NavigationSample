@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".dialogWithCallback.DialogWithCallbackActivity" />
         <activity android:name=".dialogWithNavigateBackWithResult.DialogActivity" />
         <activity android:name=".splashScreen.SplashScreenActivity" />
         <activity android:name=".sharedAnimation.SharedAnimationActivity" />

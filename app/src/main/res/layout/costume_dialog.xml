@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8BC34A"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_share"
+        android:background="@android:color/white"
+        android:padding="20dp"/>
+
+    <TextView
+        android:id="@+id/myTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/myDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginBottom="20dp"
+        android:text="TextView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPositive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="آره" />
+
+        <Button
+            android:id="@+id/btnNegative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="نه" />
+
+        <Button
+            android:id="@+id/btnNeutral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="هیچی" />
+    </LinearLayout>
+
+</LinearLayout>
