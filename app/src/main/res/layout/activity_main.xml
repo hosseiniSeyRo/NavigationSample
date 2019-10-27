@@ -66,6 +66,13 @@
             android:onClick="@{handler::btnClickHandler}"
             android:text="Dialog with Callback" />
 
+        <Button
+            android:id="@+id/btnBottomSheet"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler::btnClickHandler}"
+            android:text="Bottom Sheet" />
+
     </LinearLayout>
 
 </layout>

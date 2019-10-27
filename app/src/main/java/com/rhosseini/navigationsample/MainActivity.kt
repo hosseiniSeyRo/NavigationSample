@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.rhosseini.navigationsample.animationInNavigation.AnimationInNavigationActivity
+import com.rhosseini.navigationsample.bottomSheet.BottomSheetActivity
 import com.rhosseini.navigationsample.dialogWithNavigateBackWithResult.DialogActivity
 import com.rhosseini.navigationsample.databinding.ActivityMainBinding
 import com.rhosseini.navigationsample.dialogWithCallback.DialogWithCallbackActivity
@@ -46,6 +47,9 @@ class MainActivity : AppCompatActivity() {
             )
             binding.btnDialogWithCallback -> startActivity(
                 Intent(this, DialogWithCallbackActivity::class.java)
+            )
+            binding.btnBottomSheet -> startActivity(
+                Intent(this, BottomSheetActivity::class.java)
             )
         }
 
